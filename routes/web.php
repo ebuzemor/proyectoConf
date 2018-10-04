@@ -14,7 +14,10 @@
 Route::get('/', function () {
 	return view('landingpage');
 });
-Route::get('login', 'UserController@login')->name('login');
+
+Route::get('uuid', 'UserController@devuelve_uuid');
+//Route::get('uuid', function () { echo Uuid::generate()->string; });
+Auth::routes();
 Route::get('signup', 'UserController@signup')->name('signup');
 Route::get('forgot', 'UserController@forgot')->name('forgot');
-Route::get('logout', 'UserController@logout')->name('logout');
+Route::post('register', 'UserController@register')->name('register');

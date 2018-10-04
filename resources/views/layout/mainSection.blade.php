@@ -1,4 +1,4 @@
-<section class="hero-header text-white" style="background: url('assets/img/demo/team.jpg')">
+<section class="hero-header " style="background: url('assets/img/3.jpg')">
     <div class="container">
         <div class="table">
             <div class="header-text">
@@ -6,7 +6,7 @@
                     <div class="col-md-12 text-center p-t-40">
                         <h3 class="cd-headline big-heading rotate-1">
                             <span>fundraising for</span>
-                            <span class="cd-words-wrapper waiting">
+                            <span class="cd-words-wrapper waiting text-white">
                                 <b class="is-visible strawberry">conferences</b>
                                 <b class="indigo">science</b>
                                 <b class="sunfollower">research</b>

@@ -1,3 +1,4 @@
+
 <div class="nav-absolute nav-sticky nav-light" data-nav-sticky-classes="rgba-black-strong" data-nav-sticky-logo='assets/img/logoConfraise.png'>
     <!-- Header -->
     <nav class="mainnav navbar navbar-default justify-content-between">
@@ -39,7 +40,6 @@
                         </li>
                     </ul>
                 </div>
-            <!-- Login modal -->
             </div>
         </div>
     </nav>
