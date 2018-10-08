@@ -1,4 +1,4 @@
-<section class="hero-header " style="background: url('assets/img/3.jpg')">
+<section class="hero-header " style="background: url('assets/img/3.png')">
     <div class="container">
         <div class="table">
             <div class="header-text">

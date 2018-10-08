@@ -6,19 +6,21 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\User;
 
 class SendKeyRegistration extends Mailable
 {
     use Queueable, SerializesModels;
+    public $userInfo;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $userInfo)
     {
-        //
+        $this->userInfo = $userInfo;
     }
 
     /**
@@ -28,6 +30,6 @@ class SendKeyRegistration extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.sendingkey');
+        return $this->view('mail.SendingKey');
     }
 }

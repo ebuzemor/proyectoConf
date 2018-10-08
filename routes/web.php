@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('uuid', 'UserController@devuelve_uuid');
+Route::get('step2/{uuid}', 'UserController@step2')->name('step2');
 //Route::get('uuid', function () { echo Uuid::generate()->string; });
 Auth::routes();
 Route::get('signup', 'UserController@signup')->name('signup');

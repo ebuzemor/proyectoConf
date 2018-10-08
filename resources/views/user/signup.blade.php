@@ -52,7 +52,7 @@
 									@endif
 								</div>
 								<div class="form-group has-icon col-xl-10"><i class="icon-repeat"></i>
-									<input class="form-control" type="password" id="password_confrm" name="password_confirm" 
+									<input class="form-control" type="password" id="password_confirmation" name="password_confirmation" 
 									placeholder="Confirm your password" required>
 								</div>
 								<div class="form-group">
@@ -61,6 +61,13 @@
                             		</div>
                             	</div>
 							</fieldset>
+							@if(session('email-sent'))
+								<div class="alert alert-info alert-dismissible" role="alert">
+	        						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+							        </button>
+							        <strong>{{Session::get('email-sent')}}</strong>
+							    </div>
+							@endif
 						{!!Form::close()!!}
 					</div>
 				</div>

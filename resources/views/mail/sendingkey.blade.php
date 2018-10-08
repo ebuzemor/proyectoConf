@@ -7,10 +7,10 @@
 </head>
 <body>
     <p>
-    	Hello email, <br>
+    	Hello {{$userInfo->email}},<br>
     	Thanks for subscribing to Confraise! To complete your registration, click on the following link: 
-    	<br>link
-    	<br>
+    	<br>http://confraise.test/step2/{{$userInfo->personId}}
+    	<br><br>
     	If you have not personally requested a subscription to our site, please ignore this email.<br>
     	To prevent future emails from being considered spam, please include the email address: projectdecrowdfunding@gmail.com on your mailing list.<br>
     	If you want to change your personal information or unsubscribe click on this link.<br>

@@ -7,8 +7,9 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\SendKeyRegistration;
 use App\Http\Requests\RegisterUserRequest;
-use App\User;
 use Webpatser\Uuid\Uuid;
+use App\User;
+use Session;
 
 class UserController extends Controller
 {
@@ -22,14 +23,10 @@ class UserController extends Controller
     	return view('user.signup');
     }
 
-    public function forgot()
+    public function step2($uuid)
     {
-    	
-    }
-
-    public function logout()
-    {
-    	//return (string) Str::uuid();
+        $user = User::where('personId', $uuid)->first();
+        return view('prueba', compact('user'));
     }
 
     public function devuelve_uuid()
@@ -43,9 +40,10 @@ class UserController extends Controller
     	$post = $request->all();
     	$post['password'] = bcrypt($post['password']);
     	$user = new User;
-    	$user->idpersona = Uuid::generate()->string;
+    	$user->personId = Uuid::generate()->string;
     	$user->fill($post)->save();
-        Mail::to($post['email'])->send(new SendKeyRegistration());
-    	//return redirect('/');
+        Mail::to($post['email'])->send(new SendKeyRegistration($user));
+        Session::flash('email-sent', 'An email has been sent to continue the registration, please check.');
+        return view('user.signup');
     }
 }
